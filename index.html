@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <script>
+      function edit_text(){
+        var element = document.getElementById("title");
+        var text = prompt("Edit Text");
+        if (text==null){
+        return 0;
+      }
+        element.innerHTML = text;
+      }
+      function select_image(num){
+        var element = document.getElementById("image");
+        if (num==1){
+          element.style.background = "url('imagen.jpg')";
+        }else if (num==2){
+          element.style.background = "url('imagen_2.jpg')";
+        }else if (num==3){
+          element.style.background = "url('imagen_3.jpg')";
+        }else if (num==4){
+          element.style.background = "url('imagen_4.jpg')";
+        }
+        element.style.backgroundSize = "cover";
+        element.style.transition = "0.5s";
+      }
+    </script>
+    <style>
+      html, body {
+        margin : 0px;
+        padding : 0px;
+        width : 100%;
+        height : 100%;
+      }
+      #ui {
+        display : flex;
+        align-items : center;
+        justify-content : center;
+        width : 100%;
+        height : 100%;
+        margin : 0px;
+        padding : 0px;
+      }
+      #scrolledwindow {
+        display : flex;
+        align-items : center;
+        justify-content : center;
+        overflow : auto;
+        width : 100%;
+        height : 100%;
+        background : #444444;
+        border-style : solid;
+        border-width : 0px;
+        border-color : #cccccc;
+        margin : 0px;
+        padding : 0px;
+      }
+      #image {
+        display : flex;
+        align-items : center;
+        justify-content : center;
+        color : white;
+        font-size : 20px;
+        text-align : center;
+        text-shadow : 0px 1px 2px #555555;
+        background-image : url("imagen.jpg");
+        background-size : cover;
+        box-shadow : 0px 0px 10px #333333;
+        border-radius : 2px;
+        width : 400px;
+        height : 200px;
+        transform : scale(2)
+      }
+      #title {
+        font-size : 20px;
+        cursor : pointer;
+        margin : 40px;
+        padding : 10px;
+      }
+      #title:hover {
+        border-style : dashed;
+        border-width : 1px;
+      }
+      #subtitle {
+        font-size : 10px;
+      }
+      #panel {
+        display : column;
+        background : #f7f7f7;
+        width : min-content;
+        height : 100%;
+        padding : 0px;
+        margin : 0px;
+      }
+      .template {
+        width : 200px;
+        height : 100px;
+        margin-top : 4px;
+        border-radius : 2px;
+        border-style : solid;
+        border-size : 0px;
+        box-shadow : 0px 0px 5px #cccccc;
+        margin : 5px 10px;
+        transition : 1s;
+      }
+      #image_1 {
+        background : url("imagen.jpg");
+        background-size : cover;
+      }
+      #image_2 {
+        background : url("imagen_2.jpg");
+        background-size : cover;
+      }
+      #image_3 {
+        background : url("imagen_3.jpg");
+        background-size : cover;
+      }
+      #image_4 {
+        background : url("imagen_4.jpg");
+        background-size : cover;
+      }
+    </style>
+  </head>
+  <body>
+    <ui id="ui">
+    <div id="panel">
+      <input type="button" class="template" id="image_1" onclick="select_image(1)">
+      <input type="button" class="template" id="image_2" onclick="select_image(2)">
+      <input type="button" class="template" id="image_3" onclick="select_image(3)">
+      <input type="button" class="template" id="image_4" onclick="select_image(4)">
+    </div>
+    <div id="scrolledwindow">
+      <div id="image">
+        <p id="title" onclick="edit_text()" title="Cambiar Texto">Chica de ojos grandes, tu me comprendes bien</p>
+      </div>
+    </div>
+    </ui>
+  </body>
+</html>
